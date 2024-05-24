@@ -1,0 +1,93 @@
+-D - faz com que ela apenas fique no ambienente de Desenvolvimento "devDependencies" nao suba pra dependencias, pra nao pesar o programa
+sabendo que nao iremos usar em producao apenas no ambiente de desenvolvimento. arquivo "package.json"
+
+
+Dependencias que iremos usar para testing
+
+// Renderiza os componentes dentro do nosso teste, tem acesso a uma DOM virtual
+npm install @testing-library/jest-dom -D
+
+// Para usar a Libbry no react
+npm install @testing-library/react -D
+
+// Para Eventos de Clicks, Inputs...
+npm install @testing-library/user-event -D
+
+// Para gerar converage - saber oque ja foi testado e oque falta ser testado
+npm install @vitest/coverage-v8 -D
+
+// Gera uma Dom virtual, um ambiente de teste, sem usar o Navegador
+npm install jsdom -D
+
+// Faer os testes
+npm install vitest -D
+
+// Navegar entre as paginas
+npm install path -D
+
+
+Configuracao
+
+Criar arquivo na raiz do projeto 
+    vitest.config.ts  {
+
+        /// <reference types="vitest" />
+        import { defineConfig } from "vite"
+        import react from "@vitejs/plugin-react"
+        import path from "path"
+
+        export default defineConfig({
+            plugins: [react()],
+            test: {
+                globals: true,
+                environment: "jsdom",
+                setupFiles: ["./src/setupTests.ts"]
+            },
+            resolve: {
+                alias: [{ find: "@", replacement: path.resolve(__dirname, "./src")}]
+            }
+        })
+
+    }
+
+
+
+Dentro de SRC criar:
+    Arquivo =
+        vitest-env.d.ts {
+
+            dentro :
+            
+            ///<reference types="vitest/globals"/>
+        }
+
+        setupTests.ts {
+            import "@testing-library/jest-dom" 
+        }
+
+
+abrir arquivo package.json
+ir em "script" e add:
+{
+
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+}
+
+
+Criar o Arquivo.TSX que vai trabalhar e o de Test com o mesmo nome e acrescentando:
+
+ex: Arquivo.test.tsx  ou  Arquivo.spec.tsx
+
+
+Pasta "./Courage"
+botao direito em index.html abrir com live server para ver oque ja foi testado e que falta
+
+
+*********** Comandos ***********
+
+Inicia o terminal com os testes
+npm run test
+
+Vai calcular o que já foi testado e o que esta faltando
+npm run test:coverage

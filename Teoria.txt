@@ -1,0 +1,31 @@
+// Mocks
+
+Simula um objeto, função ou módulo usado para substituir o comportamento real durante os testes.
+Usamos para:
+Isolar - pemite isolar o código sendo testado, eliminando dependencias externas.
+Controle - Facilita a simulação de comportamentos específicos para testar cenários diversos.
+Eficiência - evita a execução de código desncessário, pcomo chamadas a APIs externas, melhorando a velocidade dos testes
+Obs:
+retornamos no mock tudo oque a api busca ou envia, facilitando a velocidade do teste, pra nao chamar a API
+
+
+----------------------------------------------------------------------------------
+// TDD - Test Driven Develop
+
+TDD, ou Desenvolvimento Orientado por Testes, é uma abordagem de desenvolvimento de software onde os testes automatizados
+são escritos antes mesmo da implementação do códico de produção.
+
+Processos: 
+1 Escrever um teste - começamos escrevendo um teste automatizado que define o comportamento esperado de uma parte do código.
+2 Falhar o teste - como ainda não implementamos os códigos correspondente, o teste incialmente falhará.
+3 Implementar o código de produção -  em seguida, escrevemos o código mínimo necessário para fazer o teste passar.
+4 Passar o teste - executamos o teste novamente e garantimos que ele passe com sucesso.
+5 Refatorar o código - uma vez que o teste esteja passando, podemos refatorar o código para melhorar sua qualidade, mantendo os testes sempre verdes.
+
+Benefícios
+1 Feedback Rápido: TDD fornece feedback imediato sobre a integridadedo código, permitindo a detecção precoce de problemas.
+2 Código mais limpo e robusto - a prática do TDD leva a criação de  código mais limpo, modular e robusto, uma vez que é desenvolvido de forma incremental e orientado pelos requisitos dos testes.
+3 Maior confiança - Testes automatizads fornecem uma rede de segurança aos desenvolvedores mais confiança ao fazer alterações no código.
+
+Conclusão
+TDD é uma abordagem de desenvolvimento de software que pode ajudar a criar código mais limpo, robusto, confiável e de facil manutenção.

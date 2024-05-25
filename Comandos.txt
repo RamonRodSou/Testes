@@ -1,0 +1,51 @@
+// pegar uma Tag Html
+findByRole / findAllByRole {
+
+        test("Deve haver um título escrito 'Sign In'", async () => {
+        render(<Login />)
+        const title = await screen.findByRole("heading", {
+            name: /Sign In/i
+        })
+        expect(title).toBeInTheDocument()
+    })
+}
+----------------------------------------------------------------
+
+// Pegar um texto Placeholder {
+
+screen.findAllByPlaceholderText
+    test("Deve haver input para e-mail", async () => {
+        render(<Login />)
+        const inputEmail = await screen.findAllByPlaceholderText("Insira Email")
+        expect(inputEmail).toBeInTheDocument
+    })
+}
+
+----------------------------------------------------------------
+// toHaveBeenCalledTimes(1)
+a quantidade de vezes que o tbn foi cchamado
+// Simular um Click no btn
+fireEvent.click(button) {
+    
+    test("Deve ser movido para outro tela depois do click no btn", async() => {
+        render(<Login />)
+        const button = await screen.findByRole("button")
+        fireEvent.click(button)
+        expect(navigateMock).toHaveBeenCalledTimes(1)
+
+    })
+}
+
+----------------------------------------------------------------
+
+// Titulo que deve ter no btn
+textContent {
+
+    test("Deve haver um button", async () => {
+
+        render(<Login />)
+        const button = await screen.findByRole("button")
+        expect(button.textContent).toBe("Login")
+
+    })
+}

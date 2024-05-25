@@ -25,6 +25,10 @@ npm install vitest -D
 // Navegar entre as paginas
 npm install path -D
 
+// Instalando React Router Dom para navegar e sua dependencia
+npm install react-router-dom
+npm install @types/react-router-dom -D
+
 
 Configuracao
 

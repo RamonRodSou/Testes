@@ -12,6 +12,7 @@ export default function MainRoutes () {
             <Route path="/sign-up" element={<SignUp />} />
 
 
+            <Route path="/*" element={<h1> 404 Paga Not Found</h1>} />
         </Routes>
     )
 }

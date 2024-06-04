@@ -29,3 +29,14 @@ Benefícios
 
 Conclusão
 TDD é uma abordagem de desenvolvimento de software que pode ajudar a criar código mais limpo, robusto, confiável e de facil manutenção.
+
+----------------------------------------------------------------------------------
+// Mockimplementation
+
+De forma muito resumida o mock implementation, serve para que nós mudemos como uma função / método é implementado
+internamente, ou seja, mudamos o seu comportamento para que nossos testes funcionem.
+
+
+ex:
+
+Link: vi.fn().Mockimplementation((props) => props.children)

@@ -10,4 +10,4 @@ export async function fetchPokemonList(): Promise<PokemonType[]> {
 export async function fetchPokemonDetails(id: number): Promise<PokemonType> {
     const response = await fetch(`${BASE_URL}/pokemon/${id}`)
     return await response.json()
-}
+} 

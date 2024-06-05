@@ -102,3 +102,12 @@ npm run test:coverage
 Rodar a API
 npm run dev
 
+
+------------- Obs -------------
+Colocar um ambiente visual para mostrar os testes
+package.json {
+    scripts...
+        "test": "vitest --ui",
+}
+
+vai pedir para instalar o ui, clicam em "Y"

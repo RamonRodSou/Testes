@@ -91,7 +91,10 @@ botao direito em index.html abrir com live server para ver oque ja foi testado e
 *********** Comandos ***********
 
 Inicia o terminal com os testes
-npm run tests
+npm run test
 
 Vai calcular o que já foi testado e o que esta faltando
-npm run tests:coverage
+npm run test:coverage
+
+Rodar a API
+npm run dev

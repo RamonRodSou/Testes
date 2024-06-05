@@ -1,0 +1,40 @@
+// Cypress Test-end-to-end
+Test-end-to-end - simula a interacao do usuario com app
+
+Cypress é uma ferramenta usada para testar aplicacoes web, com ele voce pode testar componentes e tambem realizar os famoso testes end-to-end
+
+Existem diversas vantagens em usar o cypress em seus testes frontend, como ja vimos, ele pode ser utilizado para testes de unitarios (componentes)
+e testes end-to-end, mas o que eu prefiro é para testes end-to-end.
+Vantagesn
+    Confiabilidade
+    Simplicidade de usado
+    Execucao rápida e eficiente
+    Visualizacao interativa dos testes
+
+Palavras Reservadas:
+    describe, test, it
+
+Ex:
+
+describe ('login', () => {
+    it('user should be able to log in', () => {
+        cy.visit('/')
+    })
+
+    //open the login modal 
+    cy.get('button').contains('Login').click()
+
+    //fill in the form
+    cy.get('input[type="email"]').type('test@test.com')
+    cy.get('input[type="passowrd"]').type('test123')
+
+    //submit the form
+    cy.get(......)
+
+}) 
+*************** INSTALL ***************
+// Doc
+https://www.cypress.io/
+
+npm install cypress --save-dev
+

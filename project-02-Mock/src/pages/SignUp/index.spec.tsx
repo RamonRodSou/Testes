@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import SignUp from "."
 import { vi } from "vitest"
-import Login from "../Login"
 
 const navigateMock = vi.fn()
 

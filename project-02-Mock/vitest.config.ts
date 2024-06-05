@@ -2,6 +2,7 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import path from "path"
+import { configDefaults } from "vitest/config"
 
 export default defineConfig({
     plugins: [react()],
@@ -10,6 +11,12 @@ export default defineConfig({
         environment: "jsdom",
         setupFiles: ["./src/setupTests.ts"],
         include:["src/**/*.spec.tsx"],
+        coverage:{
+              exclude:[...configDefaults.coverage.exclude,
+                "*/types/*",
+                "src/main.tsx",
+               ]
+        }
 
     },
     resolve: {

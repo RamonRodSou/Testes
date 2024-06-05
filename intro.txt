@@ -29,6 +29,9 @@ npm install path -D
 npm install react-router-dom
 npm install @types/react-router-dom -D
 
+// FakeJs Gera  Img, email etc dados fakes
+//  https://fakerjs.dev/guide/
+npm install @faker-js/faker --save-dev
 
 Configuracao
 
@@ -98,3 +101,4 @@ npm run test:coverage
 
 Rodar a API
 npm run dev
+

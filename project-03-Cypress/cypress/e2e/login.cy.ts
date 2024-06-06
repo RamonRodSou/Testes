@@ -4,7 +4,7 @@ describe('Testa a página de login', () => {
 
     cy.visit('/')
     cy.intercept('GET', 'http://localhost:3000/pokemon', {
-        fixture: 'pokemons.json'
+      fixture: 'pokemons.json'
     })
 
     cy.contains("Login").click()
@@ -16,7 +16,7 @@ describe('Testa a página de login', () => {
 
     cy.visit('/')
     cy.intercept('GET', 'http://localhost:3000/pokemon', {
-        fixture: 'pokemons.json'
+      fixture: 'pokemons.json'
     })
 
     cy.contains("Login").click()
@@ -31,5 +31,15 @@ describe('Testa a página de login', () => {
     cy.visit('/')
     cy.contains("Não tem cadastro? Clique aqui").click()
     cy.contains("Cadastre-se")
+  });
+
+  it("O Botão deve ter 10px de margin top", () => {
+
+    cy.visit("/sign-up")
+    cy.get("div")
+      .find("button")
+      .should("have.css", "marginTop")
+      .and("match", /10px/i)
+
   });
 })  

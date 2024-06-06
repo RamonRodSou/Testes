@@ -6,13 +6,13 @@ describe("Testa a página sign-up", () => {
         cy.contains("Sign Up").click()
         cy.contains("Dashboard")
     });
-    
+
     it("Quando clicar em Sign Up deve ir para página Dashboard e 3 pokemons", () => {
 
         cy.visit("/sign-up")
         cy.contains("Sign Up").click()
         cy.intercept('GET', 'http://localhost:3000/pokemon', {
-            fixture:'pokemons.json'
+            fixture: 'pokemons.json'
         })
         cy.contains("Pikachu")
         cy.contains("Rotom")
@@ -25,7 +25,7 @@ describe("Testa a página sign-up", () => {
         cy.visit("/sign-up")
         cy.contains("Sign Up").click()
         cy.intercept('GET', 'http://localhost:3000/pokemon', {
-            fixture:'pokemons.json'
+            fixture: 'pokemons.json'
         })
         cy.contains("Pikachu").click()
         cy.contains("Voltar")
@@ -42,6 +42,15 @@ describe("Testa a página sign-up", () => {
     });
 
 
+
+    it("O Botão deve ter 10px de margin top", () => {
+
+        cy.visit("/sign-up")
+        cy.get("div")
+          .find("button")
+          .should("have.css", "marginTop")
+          .and("match", /10px/i)
     
+      });
 })
 
